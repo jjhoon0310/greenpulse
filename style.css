@@ -62,11 +62,54 @@ body {
     color: #888;
 }
 
+#search-box {
+    height: 70%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 1%;
+    left: 20%;
+    border-radius: 1.5vw;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+#suggestionsBox {
+    margin: 3% 2%;
+}
+
+#suggestionsBox h1 {
+    font-size: 1.2vw;
+    font-weight: 600;
+    margin: 0;
+}
+
+#suggestionsBox p {
+    font-size: 1.2vw;
+}
+
+#suggestionsList {
+    margin-top: 2%;
+    padding: 0;
+}
+
+#suggestionsList li {
+    font-size: 1.2vw;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
 /* ----------------------Header---------------------- */
 .header {
     padding: 0 4%;
     display: flex;
     margin-bottom: 12%;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.header.dimmed {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background */
+    opacity: 0.8;
 }
 
 .welcome {

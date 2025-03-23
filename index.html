@@ -17,300 +17,315 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div
-            class="topnav"
-            id="myTopnav"
-            onmouseover="hover(this)"
-            onmouseout="notHover(this)"
-        >
-            <a href="index.html" class="right-nav-option"
-                ><img src="images/profile.png" id="profile" />
-            </a>
-            <a href="index.html" class="right-nav-option"
-                ><img src="images/mail.png" id="mail" />
-            </a>
+        <div class="contents">
+            <div
+                class="topnav"
+                id="myTopnav"
+                onmouseover="hover(this)"
+                onmouseout="notHover(this)"
+            >
+                <a href="user.html" class="right-nav-option"
+                    ><img src="images/profile.png" id="profile" />
+                </a>
+                <a href="index.html" class="right-nav-option"
+                    ><img src="images/mail.png" id="mail" />
+                </a>
 
-            <div class="search-container">
-                <input
-                    type="text"
-                    class="search-input"
-                    id="searchInput"
-                    placeholder="Search..."
-                    onkeyup="showSuggestions()"
-                />
-                <div class="suggestions" id="suggestionsBox">
-                    <ul id="suggestionsList"></ul>
+                <div class="search-container">
+                    <input
+                        type="text"
+                        class="search-input"
+                        placeholder="Search..."
+                        onclick="search()"
+                    />
+                </div>
+
+                <a href="index.html" class="logo"
+                    ><img class="logo" src="images/logo.png"
+                /></a>
+            </div>
+
+            <div class="welcome">
+                <h1>Vanessa's GCSE Mathematics</h1>
+            </div>
+
+            <div class="header">
+                <div class="video-container">
+                    <!-- Video Rows -->
+                    <div class="video-row">
+                        <div class="video-section">
+                            <div
+                                class="video"
+                                onclick="markAsWatched('lecture1')"
+                            ></div>
+                            <h1 class="title">Vectors</h1>
+                            <p class="desc">
+                                How to represent and manipulate vectors for
+                                solving geometric problems.
+                            </p>
+                            <p class="last-watched">
+                                Last Watched:
+                                <span id="lastWatched-lecture1">Never</span>
+                            </p>
+                        </div>
+
+                        <div class="video-section">
+                            <div
+                                class="video"
+                                onclick="markAsWatched('lecture2')"
+                            ></div>
+                            <h1 class="title">Probability Distributions</h1>
+                            <p class="desc">
+                                Understand probability models and how they apply
+                                to different events.
+                            </p>
+                            <p class="last-watched">
+                                Last Watched:
+                                <span id="lastWatched-lecture2">Never</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="video-row">
+                        <div class="video-section">
+                            <div
+                                class="video"
+                                onclick="markAsWatched('lecture3')"
+                            ></div>
+                            <h1 class="title">Trigonometry</h1>
+                            <p class="desc">
+                                Learn sine, cosine, and tangent for solving
+                                angles and distances.
+                            </p>
+                            <p class="last-watched">
+                                Last Watched:
+                                <span id="lastWatched-lecture3">Never</span>
+                            </p>
+                        </div>
+
+                        <div class="video-section">
+                            <div
+                                class="video"
+                                onclick="markAsWatched('lecture4')"
+                            ></div>
+                            <h1 class="title">Algebraic Expressions</h1>
+                            <p class="desc">
+                                Master algebraic simplifications and
+                                factorization techniques.
+                            </p>
+                            <p class="last-watched">
+                                Last Watched:
+                                <span id="lastWatched-lecture4">Never</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="video-row">
+                        <div class="video-section">
+                            <div
+                                class="video"
+                                onclick="markAsWatched('lecture5')"
+                            ></div>
+                            <h1 class="title">Quadratic Equations</h1>
+                            <p class="desc">
+                                Solving quadratic equations using factorization,
+                                formula, and graphs.
+                            </p>
+                            <p class="last-watched">
+                                Last Watched:
+                                <span id="lastWatched-lecture5">Never</span>
+                            </p>
+                        </div>
+
+                        <div class="video-section">
+                            <div
+                                class="video"
+                                onclick="markAsWatched('lecture6')"
+                            ></div>
+                            <h1 class="title">Statistics & Data Analysis</h1>
+                            <p class="desc">
+                                Understanding mean, median, mode, and data
+                                visualization.
+                            </p>
+                            <p class="last-watched">
+                                Last Watched:
+                                <span id="lastWatched-lecture6">Never</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vertical-line"></div>
+
+                <div class="ceo-list">
+                    <ul class="tabs">
+                        <li data-tab-target="#option1" class="active tab">
+                            For you
+                        </li>
+                        <li data-tab-target="#option2" class="tab">Trending</li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="option1" data-tab-content class="active">
+                            <div class="option-list">
+                                <p>
+                                    Measures of Central Tendency and Spread<br /><span
+                                        class="lecturer"
+                                        >Marcus Chew</span
+                                    >
+                                </p>
+                                <span>#Statistics</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Data Collection and Representation<br /><span
+                                        class="lecturer"
+                                        >Julian Fairchild</span
+                                    >
+                                </p>
+                                <span>#Statistics</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Properties and Constructions<br /><span
+                                        class="lecturer"
+                                        >Catherine Bellamy</span
+                                    >
+                                </p>
+                                <span>#Geometry</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Quadratic Equation Applications<br /><span
+                                        class="lecturer"
+                                        >Kwame Osei</span
+                                    >
+                                </p>
+                                <span>#Algebra</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Simultaneous Equation Applications<br /><span
+                                        class="lecturer"
+                                        >Isabella Moretti</span
+                                    >
+                                </p>
+                                <span>#Algebra</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Scatter Graphs and Correlation<br /><span
+                                        class="lecturer"
+                                        >Marcus Chew</span
+                                    >
+                                </p>
+                                <span>#Statistics</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Master Trigonometry<br /><span
+                                        class="lecturer"
+                                        >Zhang Wei</span
+                                    >
+                                </p>
+                                <span>#Geometry</span>
+                            </div>
+                        </div>
+
+                        <div id="option2" data-tab-content>
+                            <div class="option-list">
+                                <p>
+                                    Advanced Trigonometry Techniques<br /><span
+                                        class="lecturer"
+                                        >Liam Patterson</span
+                                    >
+                                </p>
+                                <span>#Geometry</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Statistical Data Interpretation<br /><span
+                                        class="lecturer"
+                                        >Sophia Nguyen</span
+                                    >
+                                </p>
+                                <span>#Statistics</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Geometric Structures and Theorems<br /><span
+                                        class="lecturer"
+                                        >Daniel Holt</span
+                                    >
+                                </p>
+                                <span>#Geometry</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Applied Quadratic Equations<br /><span
+                                        class="lecturer"
+                                        >Fatima Al-Mansour</span
+                                    >
+                                </p>
+                                <span>#Algebra</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Analyzing Mean, Median, and Variability<br /><span
+                                        class="lecturer"
+                                        >Noah Becker</span
+                                    >
+                                </p>
+                                <span>#Statistics</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Correlation and Trend Analysis<br /><span
+                                        class="lecturer"
+                                        >Elena Rodríguez</span
+                                    >
+                                </p>
+                                <span>#Statistics</span>
+                            </div>
+                            <div class="option-list">
+                                <p>
+                                    Practical Uses of Simultaneous Equations<br /><span
+                                        class="lecturer"
+                                        >Hiroshi Tanaka</span
+                                    >
+                                </p>
+                                <span>#Algebra</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <a href="index.html" class="logo"
-                ><img class="logo" src="images/logo.png"
-            /></a>
-        </div>
+            <div class="footer">
+                <h1>info@greenpulse.org</h1>
+                <h2>
+                    Quality education for every student, <br />no matter the
+                    background.
+                </h2>
 
-        <div class="welcome">
-            <h1>Vanessa's GCSE Mathematics</h1>
-        </div>
-
-        <div class="header">
-            <div class="video-container">
-                <!-- Video Rows -->
-                <div class="video-row">
-                    <div class="video-section">
-                        <div
-                            class="video"
-                            onclick="markAsWatched('lecture1')"
-                        ></div>
-                        <h1 class="title">Vectors</h1>
-                        <p class="desc">
-                            How to represent and manipulate vectors for solving
-                            geometric problems.
-                        </p>
-                        <p class="last-watched">
-                            Last Watched:
-                            <span id="lastWatched-lecture1">Never</span>
-                        </p>
-                    </div>
-
-                    <div class="video-section">
-                        <div
-                            class="video"
-                            onclick="markAsWatched('lecture2')"
-                        ></div>
-                        <h1 class="title">Probability Distributions</h1>
-                        <p class="desc">
-                            Understand probability models and how they apply to
-                            different events.
-                        </p>
-                        <p class="last-watched">
-                            Last Watched:
-                            <span id="lastWatched-lecture2">Never</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="video-row">
-                    <div class="video-section">
-                        <div
-                            class="video"
-                            onclick="markAsWatched('lecture3')"
-                        ></div>
-                        <h1 class="title">Trigonometry</h1>
-                        <p class="desc">
-                            Learn sine, cosine, and tangent for solving angles
-                            and distances.
-                        </p>
-                        <p class="last-watched">
-                            Last Watched:
-                            <span id="lastWatched-lecture3">Never</span>
-                        </p>
-                    </div>
-
-                    <div class="video-section">
-                        <div
-                            class="video"
-                            onclick="markAsWatched('lecture4')"
-                        ></div>
-                        <h1 class="title">Algebraic Expressions</h1>
-                        <p class="desc">
-                            Master algebraic simplifications and factorization
-                            techniques.
-                        </p>
-                        <p class="last-watched">
-                            Last Watched:
-                            <span id="lastWatched-lecture4">Never</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="video-row">
-                    <div class="video-section">
-                        <div
-                            class="video"
-                            onclick="markAsWatched('lecture5')"
-                        ></div>
-                        <h1 class="title">Quadratic Equations</h1>
-                        <p class="desc">
-                            Solving quadratic equations using factorization,
-                            formula, and graphs.
-                        </p>
-                        <p class="last-watched">
-                            Last Watched:
-                            <span id="lastWatched-lecture5">Never</span>
-                        </p>
-                    </div>
-
-                    <div class="video-section">
-                        <div
-                            class="video"
-                            onclick="markAsWatched('lecture6')"
-                        ></div>
-                        <h1 class="title">Statistics & Data Analysis</h1>
-                        <p class="desc">
-                            Understanding mean, median, mode, and data
-                            visualization.
-                        </p>
-                        <p class="last-watched">
-                            Last Watched:
-                            <span id="lastWatched-lecture6">Never</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="vertical-line"></div>
-
-            <div class="ceo-list">
-                <ul class="tabs">
-                    <li data-tab-target="#option1" class="active tab">
-                        For you
-                    </li>
-                    <li data-tab-target="#option2" class="tab">Trending</li>
-                </ul>
-
-                <div class="tab-content">
-                    <div id="option1" data-tab-content class="active">
-                        <div class="option-list">
-                            <p>
-                                Measures of Central Tendency and Spread<br /><span
-                                    class="lecturer"
-                                    >Marcus Chew</span
-                                >
-                            </p>
-                            <span>#Statistics</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Data Collection and Representation<br /><span
-                                    class="lecturer"
-                                    >Julian Fairchild</span
-                                >
-                            </p>
-                            <span>#Statistics</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Properties and Constructions<br /><span
-                                    class="lecturer"
-                                    >Catherine Bellamy</span
-                                >
-                            </p>
-                            <span>#Geometry</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Quadratic Equation Applications<br /><span
-                                    class="lecturer"
-                                    >Kwame Osei</span
-                                >
-                            </p>
-                            <span>#Algebra</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Simultaneous Equation Applications<br /><span
-                                    class="lecturer"
-                                    >Isabella Moretti</span
-                                >
-                            </p>
-                            <span>#Algebra</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Scatter Graphs and Correlation<br /><span
-                                    class="lecturer"
-                                    >Marcus Chew</span
-                                >
-                            </p>
-                            <span>#Statistics</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Master Trigonometry<br /><span class="lecturer"
-                                    >Zhang Wei</span
-                                >
-                            </p>
-                            <span>#Geometry</span>
-                        </div>
-                    </div>
-
-                    <div id="option2" data-tab-content>
-                        <div class="option-list">
-                            <p>
-                                Advanced Trigonometry Techniques<br /><span
-                                    class="lecturer"
-                                    >Liam Patterson</span
-                                >
-                            </p>
-                            <span>#Geometry</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Statistical Data Interpretation<br /><span
-                                    class="lecturer"
-                                    >Sophia Nguyen</span
-                                >
-                            </p>
-                            <span>#Statistics</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Geometric Structures and Theorems<br /><span
-                                    class="lecturer"
-                                    >Daniel Holt</span
-                                >
-                            </p>
-                            <span>#Geometry</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Applied Quadratic Equations<br /><span
-                                    class="lecturer"
-                                    >Fatima Al-Mansour</span
-                                >
-                            </p>
-                            <span>#Algebra</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Analyzing Mean, Median, and Variability<br /><span
-                                    class="lecturer"
-                                    >Noah Becker</span
-                                >
-                            </p>
-                            <span>#Statistics</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Correlation and Trend Analysis<br /><span
-                                    class="lecturer"
-                                    >Elena Rodríguez</span
-                                >
-                            </p>
-                            <span>#Statistics</span>
-                        </div>
-                        <div class="option-list">
-                            <p>
-                                Practical Uses of Simultaneous Equations<br /><span
-                                    class="lecturer"
-                                    >Hiroshi Tanaka</span
-                                >
-                            </p>
-                            <span>#Algebra</span>
-                        </div>
-                    </div>
-                </div>
+                <p>GreenPulse ©2025 | All Rights Reserved</p>
             </div>
         </div>
 
-        <div class="footer">
-            <h1>info@greenpulse.org</h1>
-            <h2>
-                Quality education for every student, <br />no matter the
-                background.
-            </h2>
-
-            <p>GreenPulse ©2025 | All Rights Reserved</p>
+        <div id="search-box">
+            <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search..."
+                onkeyup="showSuggestions()"
+            />
+            <div class="suggestions" id="suggestionsBox">
+                <h1>Recent Searches</h1>
+                <p>Trigonometry</p>
+                <h1 style="margin-top: 8%">Results</h1>
+                <ul id="suggestionsList"></ul>
+            </div>
         </div>
     </body>
 </html>

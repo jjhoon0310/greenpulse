@@ -36,58 +36,93 @@ function notHover(x) {
 
 // ----------------------Searchable Datas----------------------
 const suggestions = [
-    "Apple",
-    "Banana",
-    "Cherry",
-    "Date",
-    "Elderberry",
-    "Fig",
-    "Grapes",
-    "Honeydew",
+    { title: "Measures of Central Tendency and Spread", author: "Marcus Chew" },
+    { title: "Data Collection and Representation", author: "Julian Fairchild" },
+    { title: "Properties and Constructions", author: "Catherine Bellamy" },
+    { title: "Quadratic Equation Applications", author: "Kwame Osei" },
+    { title: "Simultaneous Equation Applications", author: "Isabella Moretti" },
+    { title: "Scatter Graphs and Correlation", author: "Marcus Chew" },
+    { title: "Master Trigonometry", author: "Zhang Wei" },
+    { title: "Advanced Trigonometry Techniques", author: "Liam Patterson" },
+    { title: "Statistical Data Interpretation", author: "Sophia Nguyen" },
+    { title: "Geometric Structures and Theorems", author: "Daniel Holt" },
+    { title: "Applied Quadratic Equations", author: "Fatima Al-Mansour" },
+    { title: "Analyzing Mean, Median, and Variability", author: "Noah Becker" },
+    { title: "Correlation and Trend Analysis", author: "Elena Rodríguez" },
+    {
+        title: "Practical Uses of Simultaneous Equations",
+        author: "Hiroshi Tanaka",
+    },
+    { title: "Understanding Linear Functions", author: "Maria Delgado" },
+    { title: "Graphing Quadratic Functions", author: "Ethan Caldwell" },
+    { title: "Exponential Growth and Decay", author: "Amira Hassan" },
+    {
+        title: "Factorising and Expanding Algebraic Expressions",
+        author: "Liam Wright",
+    },
+    { title: "Solving Linear and Quadratic Equations", author: "Emily Carter" },
+    {
+        title: "Simultaneous Equations: Graphical and Algebraic Methods",
+        author: "Oliver Kim",
+    },
+    { title: "Function Transformations", author: "Grace Thompson" },
+    {
+        title: "Understanding Rational and Reciprocal Functions",
+        author: "David Zhang",
+    },
+    { title: "Piecewise and Step Functions", author: "Isabelle Laurent" },
+    { title: "Exploring Absolute Value Graphs", author: "Nathaniel Scott" },
+    { title: "Introduction to Sequences and Series", author: "Sophia Bennett" },
+    { title: "Introduction to Inequalities", author: "William Turner" },
+    {
+        title: "Straight Line Graphs: Gradients and Intercepts",
+        author: "Jessica Alvarez",
+    },
 ];
 
 function showSuggestions() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
+    let input = document
+        .getElementById("searchInput")
+        .value.trim()
+        .toLowerCase();
     let suggestionsBox = document.getElementById("suggestionsBox");
     let suggestionsList = document.getElementById("suggestionsList");
 
+    // Clear previous suggestions
     suggestionsList.innerHTML = "";
-    if (input) {
-        let filteredSuggestions = suggestions.filter((item) =>
-            item.toLowerCase().includes(input)
-        );
-        if (filteredSuggestions.length > 0) {
-            suggestionsBox.style.display = "block";
-            filteredSuggestions.forEach((item) => {
-                let listItem = document.createElement("li");
-                listItem.textContent = item;
-                listItem.onclick = function () {
-                    document.getElementById("searchInput").value = item;
-                    suggestionsBox.style.display = "none";
-                };
-                suggestionsList.appendChild(listItem);
-            });
-        } else {
-            suggestionsBox.style.display = "none";
-        }
+
+    if (input.length === 0) {
+        suggestionsList.style.display = "none";
+        return;
+    }
+
+    let filteredSuggestions = suggestions.filter((item) =>
+        item.title.toLowerCase().includes(input)
+    );
+
+    console.log("Input:", input);
+    console.log("Filtered Results:", filteredSuggestions);
+
+    if (filteredSuggestions.length > 0) {
+        suggestionsList.style.display = "block";
+        filteredSuggestions.forEach((item) => {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = `${item.title} <br><span style="color:#6b7684;">${item.author}</span>`;
+            listItem.onclick = function () {
+                document.getElementById("searchInput").value = item.title;
+                suggestionsList.style.display = "none";
+            };
+            suggestionsList.appendChild(listItem);
+        });
     } else {
-        suggestionsBox.style.display = "none";
+        suggestionsList.style.display = "none";
     }
 }
 
-function performSearch() {
-    let query = document.getElementById("searchInput").value;
-    if (query) {
-        console.log("Searching for: " + query);
-        // Implement actual search functionality here
-    }
-}
-
-document.addEventListener("click", function (event) {
-    if (!document.querySelector(".search-container").contains(event.target)) {
-        document.getElementById("suggestionsBox").style.display = "none";
-    }
-});
+// Attach event listener
+document
+    .getElementById("searchInput")
+    .addEventListener("input", showSuggestions);
 
 // ----------------------SEO----------------------
 const tabs = document.querySelectorAll("[data-tab-target]");
@@ -122,6 +157,21 @@ document.querySelectorAll(".option-list span").forEach((element) => {
 
     element.style.fontSize = "1.1vw";
 });
+
+function search() {
+    document.getElementById("search-box").style.width = "50%";
+    document.querySelector(".contents").style.opacity = "0.6";
+    document.querySelector(".contents").style.backgroundColor =
+        "rgba(0, 0, 0, 0.6)";
+    document.querySelector("#search-box").style.padding = "1%";
+}
+
+function closeSearch() {
+    document.getElementById("search-box").style.width = "0";
+    document.querySelector(".contents").style.opacity = "1";
+    document.querySelector(".contents").style.backgroundColor = "";
+    document.querySelector("#search-box").style.padding = "0";
+}
 
 // ----------------------Date watched----------------------
 function getFormattedDate() {
@@ -161,6 +211,3 @@ function loadLastWatchedDates() {
         }
     });
 }
-
-// Load last watched dates when page loads
-document.addEventListener("DOMContentLoaded", loadLastWatchedDates);
