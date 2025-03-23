@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Profile</title>
+        <link rel="stylesheet" href="user.css" />
+
+        <link rel="stylesheet" href="style.css" />
+        <script src="user.js" defer></script>
+        <script src="script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div
+            class="topnav"
+            id="myTopnav"
+            onmouseover="hover(this)"
+            onmouseout="notHover(this)"
+        >
+            <a href="user.html" class="right-nav-option"
+                ><img src="images/profile.png" id="profile" />
+            </a>
+            <a href="index.html" class="right-nav-option"
+                ><img src="images/mail.png" id="mail" />
+            </a>
+
+            <div class="search-container">
+                <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Search..."
+                    onclick="search()"
+                />
+            </div>
+
+            <a href="index.html" class="logo"
+                ><img class="logo" src="images/logo.png"
+            /></a>
+        </div>
+
+        <div class="studio-container">
+            <nav class="sidebar">
+                <ul>
+                    <li onclick="showSection('Profile')">Edit Profile</li>
+                    <li onclick="showSection('content')">My Videos</li>
+                    <li onclick="showSection('analytics')">Analytics</li>
+                    <li onclick="showSection('comments')">Comments</li>
+                    <li onclick="showSection('upload')">Upload Video</li>
+                </ul>
+            </nav>
+            <div class="vertical"></div>
+
+            <div class="main-content">
+                <section id="Profile" class="section active">
+                    <h1>Welcome Vanessa!</h1>
+                    <div class="profile-section">
+                        <div class="profile-image-container">
+                            <img
+                                id="profileImage"
+                                src="images/noProfile.png"
+                                alt="Profile Picture"
+                            />
+                        </div>
+                        <input
+                            type="file"
+                            id="profileImageInput"
+                            accept="image/*"
+                        />
+                        <p>
+                            Username:
+                            <input type="text" id="dashboardUsername" />
+                        </p>
+                        <p>Email: <input type="email" id="dashboardEmail" /></p>
+                        <button onclick="updateDashboardProfile()">
+                            Save Profile
+                        </button>
+                    </div>
+                    <h3>Profile Info</h3>
+                    <p>
+                        Username:
+                        <span id="profileUsername">User</span>
+                    </p>
+                    <p>
+                        Email:
+                        <span id="profileEmail">user@example.com</span>
+                    </p>
+                </section>
+                <section id="content" class="section">
+                    Uploaded Videos
+                    <ul id="videoHub"></ul>
+                </section>
+                <section id="analytics" class="section">
+                    Analytics Overview
+                    <canvas id="viewTrendsChart"></canvas>
+                </section>
+                <section id="comments" class="section">
+                    Manage your comments
+                </section>
+                <section id="settings" class="section">
+                    Channel settings
+                </section>
+                <section id="profile" class="section">
+                    <h2>Edit Profile</h2>
+                    <label>Username: <input type="text" id="username" /></label>
+                    <label>Email: <input type="email" id="email" /></label>
+                    <button onclick="updateProfile()">Save Changes</button>
+                </section>
+                <section id="upload" class="section">
+                    <h2>Upload Video</h2>
+                    <input type="file" id="videoUpload" />
+                    <input
+                        type="text"
+                        id="videoTitle"
+                        placeholder="Video Title"
+                    />
+                    <textarea
+                        id="videoDescription"
+                        placeholder="Video Description"
+                    ></textarea>
+                    <button onclick="publishVideo()">Publish</button>
+                    <ul id="videoList"></ul>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

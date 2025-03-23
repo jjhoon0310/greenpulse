@@ -1,0 +1,83 @@
+.studio-container {
+    margin-top: 4%;
+    display: flex;
+    width: 100%;
+}
+
+/* ----------------------Side Bar---------------------- */
+.sidebar {
+    width: 15%;
+    padding: 2%;
+    height: 100vh;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10%;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 5%;
+    font-size: 1.2vw;
+}
+
+.sidebar ul li:hover {
+    background: #f3f4f5;
+    font-weight: 600;
+    border-radius: 1.2vw;
+}
+
+.vertical {
+    border-left: 1px solid #d1d6db;
+    height: 138vh;
+    margin: 0 2%;
+}
+
+/* ----------------------Main sections---------------------- */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* ----------------------Edit Profit---------------------- */
+#profileImage {
+    width: 15vw;
+    margin: 5% 5%;
+}
+
+.profile-section p {
+    font-size: 1.2vw;
+}
+
+#dashboardUsername,
+#dashboardEmail {
+    border: none;
+    border-bottom: 2px solid #d1d6db;
+    font-size: 1.2vw;
+}
+
+button {
+    padding: 3%;
+    font-size: 1.2vw;
+    border: none;
+    border-radius: 1vw;
+    background: #172619;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #67bf77;
+    transition: 0.3s;
+}
+
+#viewTrendsChart {
+    width: 80vw;
+    height: 100vw;
+}
